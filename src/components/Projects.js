@@ -1,42 +1,62 @@
 import { Col, Container, Row, Tab } from "react-bootstrap";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import WEBprojImg1 from "../assets/img/Books.png";
+import WEBprojImg2 from "../assets/img/Portfolio.png";
+import WEBprojImg3 from "../assets/img/BetterBuys.png";
+import WEBprojImg4 from "../assets/img/BloodDonation.png";
+import WEBprojImg5 from "../assets/img/PortfolioOld.png";
+import SOFTWAREprojImg1 from "../assets/img/GesturePresentation.png";
+import SOFTWAREprojImg2 from "../assets/img/BookShop.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import Nav from "react-bootstrap/Nav";
 import { ProjectCard } from "./ProjectCard";
+import TrackVisibility from "react-on-screen";
+import "animate.css";
 
 export const Projects = () => {
-	const projects = [
+	const projectsWEB = [
 		{
-			title: "ABC",
-			description: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-			imgUrl: projImg1,
+			title: "Books",
+			description: "Book Store for selling and purchasing of Books",
+			imgUrl: WEBprojImg1,
 		},
 		{
-			title: "ABC",
-			description: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-			imgUrl: projImg2,
+			title: "Portfolio",
+			description: "Portfolio Website to showcase Skills and Projects",
+			imgUrl: WEBprojImg2,
 		},
 		{
-			title: "ABC",
-			description: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-			imgUrl: projImg3,
+			title: "Better Buys",
+			description: "Laptop Store for purchasing Laptops",
+			imgUrl: WEBprojImg3,
 		},
 		{
-			title: "ABC",
-			description: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-			imgUrl: projImg1,
+			title: "Blood Donation",
+			description:
+				"Collect Information of Blood Donars and display Donars Count",
+			imgUrl: WEBprojImg4,
 		},
 		{
-			title: "ABC",
-			description: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-			imgUrl: projImg2,
+			title: "CV Website",
+			description: "CV Website to showcase Skills and Projects",
+			imgUrl: WEBprojImg5,
+		},
+		// {
+		// 	title: "ABC",
+		// 	description: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+		// 	imgUrl: projImg3,
+		// },
+	];
+
+	const projectsSOFTWARE = [
+		{
+			title: "HandWave",
+			description: "Gesture Controlled Presentation",
+			imgUrl: SOFTWAREprojImg1,
 		},
 		{
-			title: "ABC",
-			description: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-			imgUrl: projImg3,
+			title: "Book Shop",
+			description: "Store Record of Books available in Store",
+			imgUrl: SOFTWAREprojImg2,
 		},
 	];
 
@@ -48,14 +68,27 @@ export const Projects = () => {
 			<Container>
 				<Row>
 					<Col>
-						<h2>Projects</h2>
-						<p>
-							I have a solid portfolio of web development
-							projects, each a testament to my dedication and
-							expertise in crafting functional and innovative
-							digital solutions. Explore my work to see how I turn
-							ideas into reality.
-						</p>
+						<TrackVisibility>
+							{({ isVisible }) => (
+								<div
+									className={
+										isVisible
+											? "animate__animated animate__slideInUp"
+											: ""
+									}
+								>
+									<h2>Projects</h2>
+									<p>
+										I have a solid portfolio of web
+										development projects, each a testament
+										to my dedication and expertise in
+										crafting functional and innovative
+										digital solutions. Explore my work to
+										see how I turn ideas into reality.
+									</p>
+								</div>
+							)}
+						</TrackVisibility>
 						<Tab.Container
 							id='projects-tabs'
 							defaultActiveKey='first'
@@ -67,24 +100,24 @@ export const Projects = () => {
 							>
 								<Nav.Item>
 									<Nav.Link eventKey='first'>
-										Tab One
+										WEB DEVELOPMENT
 									</Nav.Link>
 								</Nav.Item>
 								<Nav.Item>
 									<Nav.Link eventKey='second'>
-										Tab Two
+										SOFTWARE DEVELOPMENT
 									</Nav.Link>
 								</Nav.Item>
-								<Nav.Item>
+								{/* <Nav.Item>
 									<Nav.Link eventKey='third'>
 										Tab Three
 									</Nav.Link>
-								</Nav.Item>
+								</Nav.Item> */}
 							</Nav>
 							<Tab.Content>
 								<Tab.Pane eventKey='first'>
 									<Row>
-										{projects.map((project, index) => {
+										{projectsWEB.map((project, index) => {
 											return (
 												<ProjectCard
 													key={index}
@@ -95,11 +128,22 @@ export const Projects = () => {
 									</Row>
 								</Tab.Pane>
 								<Tab.Pane eventKey='second'>
-									Lorem Ipsum
+									<Row>
+										{projectsSOFTWARE.map(
+											(project, index) => {
+												return (
+													<ProjectCard
+														key={index}
+														{...project}
+													/>
+												);
+											}
+										)}
+									</Row>
 								</Tab.Pane>
-								<Tab.Pane eventKey='third'>
+								{/* <Tab.Pane eventKey='third'>
 									Lorem Ipsum
-								</Tab.Pane>
+								</Tab.Pane> */}
 							</Tab.Content>
 						</Tab.Container>
 					</Col>

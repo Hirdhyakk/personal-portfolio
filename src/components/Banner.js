@@ -2,6 +2,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImage from "../assets/img/header-img.svg";
 import { useEffect, useState } from "react";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Banner = () => {
 	const [loopNum, setLoopNum] = useState(0);
@@ -53,21 +55,44 @@ export const Banner = () => {
 						md={6}
 						xl={7}
 					>
-						<span className='tagline'>Welcome to my Portfolio</span>
-						<h1>
-							{`Hi I'm Hirdhya Khanna `}
-							<span className='wrap'>{text}</span>
-						</h1>
-						<p>
-							I'm a Computer Science Engineer currently pursuing
-							my B.Tech at JMIETI, Radaur. I'm passionate about
-							Full Stack Web Development and eager to embark on a
-							successful career. Explore my portfolio to see my
-							work and skills in action.
-						</p>
-						<button onClick={() => console.log("connect")}>
-							Let's Connect <ArrowRightCircle size={25} />
-						</button>
+						<TrackVisibility>
+							{({ isVisible }) => (
+								<div
+									className={
+										isVisible
+											? "animate__animated animate__fadeIn"
+											: ""
+									}
+								>
+									<span className='tagline'>
+										Welcome to my Portfolio
+									</span>
+									<h1>
+										{`Hi I'm Hirdhya Khanna `}
+										<span className='wrap'>{text}</span>
+										<span className='text-secondary'>
+											|
+										</span>
+									</h1>
+									<p>
+										I'm a Computer Science Engineer
+										currently pursuing my B.Tech at JMIETI,
+										Radaur. I'm passionate about Full Stack
+										Web Development and eager to embark on a
+										successful career. Explore my portfolio
+										to see my work and skills in action.
+									</p>
+									<button
+										onClick={() =>
+											(window.location.href = "#connect")
+										}
+									>
+										Let's Connect{" "}
+										<ArrowRightCircle size={25} />
+									</button>
+								</div>
+							)}
+						</TrackVisibility>
 					</Col>
 					<Col
 						xs={12}
