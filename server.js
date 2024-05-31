@@ -2,12 +2,6 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-var http = require("http");
-
-http.createServer(function (req, res) {
-	res.write("I am On");
-	res.end();
-}).listen(5000);
 
 // server used to send send emails
 const app = express();
@@ -19,8 +13,8 @@ app.listen(5000, () => console.log("Server Running"));
 const contactEmail = nodemailer.createTransport({
 	service: "gmail",
 	auth: {
-		user: MailID,
-		pass: MailPASS,
+		user: "hirdhyak@gmail.com",
+		pass: "focxxigoqdnxfaiy",
 	},
 });
 

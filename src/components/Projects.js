@@ -18,7 +18,7 @@ export const Projects = () => {
 			title: "Books",
 			description: "Book Store for selling and purchasing of Books",
 			imgUrl: WEBprojImg1,
-			githubUrl: "",
+			githubUrl: "https://github.com/Hirdhyakk/Book-Store-MERN",
 		},
 		{
 			title: "Portfolio",
