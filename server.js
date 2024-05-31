@@ -9,8 +9,6 @@ app.use(cors());
 app.use(express.json());
 app.use("/", router);
 app.listen(5000, () => console.log("Server Running"));
-console.log(process.env.EMAIL_USER);
-console.log(process.env.EMAIL_PASS);
 
 const contactEmail = nodemailer.createTransport({
 	service: "gmail",
@@ -22,9 +20,9 @@ const contactEmail = nodemailer.createTransport({
 
 contactEmail.verify((error) => {
 	if (error) {
-		console.log(error);
+		// console.log(error);
 	} else {
-		console.log("Ready to Send");
+		// console.log("Ready to Send");
 	}
 });
 
@@ -44,10 +42,10 @@ router.post("/contact", (req, res) => {
 	};
 	contactEmail.sendMail(mail, (error) => {
 		if (error) {
-			console.log(error);
+			// console.log(error);
 			res.json(error);
 		} else {
-			console.log("success");
+			// console.log("success");
 			res.json({ code: 200, status: "Message Sent" });
 		}
 	});
