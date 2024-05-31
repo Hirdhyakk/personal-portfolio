@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from "../assets/img/logo.svg";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
@@ -33,12 +32,12 @@ export const NavBar = () => {
 			className={scrolled ? "scrolled" : ""}
 		>
 			<Container>
-				<Navbar.Brand href='/'>
+				{/* <Navbar.Brand href='/'>
 					<img
 						src={logo}
 						alt='Logo'
 					/>
-				</Navbar.Brand>
+				</Navbar.Brand> */}
 				<Navbar.Toggle aria-controls='basic-navbar-nav'>
 					<span className='navbar-toggler-icon'></span>
 				</Navbar.Toggle>
@@ -80,13 +79,13 @@ export const NavBar = () => {
 					</Nav>
 					<span className='navbar-text'>
 						<div className='social-icon'>
-							<a href='#'>
+							<a href='https://www.linkedin.com/in/hirdhya-khanna-270ab2223/'>
 								<img
 									src={navIcon1}
 									alt=''
 								/>
 							</a>
-							<a href='#'>
+							{/* <a href='#'>
 								<img
 									src={navIcon2}
 									alt=''
@@ -97,9 +96,12 @@ export const NavBar = () => {
 									src={navIcon3}
 									alt=''
 								/>
-							</a>
+							</a> */}
 						</div>
-						<button className='vvd'>
+						<button
+							className='vvd'
+							onClick={() => (window.location.href = "#connect")}
+						>
 							<span>Let's Connect</span>
 						</button>
 					</span>

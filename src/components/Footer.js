@@ -10,13 +10,13 @@ export const Footer = () => {
 				<Row className=''>
 					<Col className='mt-4 text-end'>
 						<div className='social-icon'>
-							<a href='#'>
+							<a href='https://www.linkedin.com/in/hirdhya-khanna-270ab2223/'>
 								<img
 									src={navIcon1}
 									alt=''
 								/>
 							</a>
-							<a href='#'>
+							{/* <a href='#'>
 								<img
 									src={navIcon2}
 									alt=''
@@ -27,7 +27,7 @@ export const Footer = () => {
 									src={navIcon3}
 									alt=''
 								/>
-							</a>
+							</a> */}
 						</div>
 						<p>Copyright 2024. All Rights Reserved</p>
 					</Col>
