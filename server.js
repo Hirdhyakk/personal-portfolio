@@ -2,6 +2,12 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+var http = require("http");
+
+http.createServer(function (req, res) {
+	res.write("I am On");
+	res.end();
+}).listen(5000);
 
 // server used to send send emails
 const app = express();

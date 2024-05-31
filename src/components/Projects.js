@@ -18,27 +18,32 @@ export const Projects = () => {
 			title: "Books",
 			description: "Book Store for selling and purchasing of Books",
 			imgUrl: WEBprojImg1,
+			githubUrl: "",
 		},
 		{
 			title: "Portfolio",
 			description: "Portfolio Website to showcase Skills and Projects",
 			imgUrl: WEBprojImg2,
+			githubUrl: "https://github.com/Hirdhyakk/personal-portfolio",
 		},
 		{
 			title: "Better Buys",
 			description: "Laptop Store for purchasing Laptops",
 			imgUrl: WEBprojImg3,
+			githubUrl: "https://github.com/Hirdhyakk/Better-Buys",
 		},
 		{
 			title: "Blood Donation",
 			description:
 				"Collect Information of Blood Donars and display Donars Count",
 			imgUrl: WEBprojImg4,
+			githubUrl: "https://github.com/Hirdhyakk/Blood-Donation",
 		},
 		{
 			title: "CV Website",
 			description: "CV Website to showcase Skills and Projects",
 			imgUrl: WEBprojImg5,
+			githubUrl: "https://github.com/Hirdhyakk/CV-Website/",
 		},
 		// {
 		// 	title: "ABC",
@@ -52,11 +57,13 @@ export const Projects = () => {
 			title: "HandWave",
 			description: "Gesture Controlled Presentation",
 			imgUrl: SOFTWAREprojImg1,
+			githubUrl: "https://github.com/Hirdhyakk/HandWave",
 		},
 		{
 			title: "Book Shop",
 			description: "Store Record of Books available in Store",
 			imgUrl: SOFTWAREprojImg2,
+			githubUrl: "https://github.com/Hirdhyakk/BookShop",
 		},
 	];
 
